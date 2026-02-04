@@ -1,0 +1,467 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: "Silkscreen", sans-serif;
+    background-color: rgb(31, 23, 99);
+    margin: 0;
+}
+
+.start {
+    opacity: 0;
+}
+
+@keyframes starting {
+    from{
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+    background: linear-gradient(to right, rgba(82, 79, 255, 0.651), rgba(169, 203, 255, 0.151), rgb(136, 148, 255));
+    width: 97.5vw;
+    border-radius: 22.5px;
+    height: clamp(1.5rem, 7vh, 2rem);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5em;
+    position: fixed;
+    top: 5px;
+    margin: 0.5em;
+    z-index: 1;
+    box-shadow: 0px 0px 5px rgb(159, 220, 255);
+    background-size: 400% 400%;
+    animation: bgMove 12s linear infinite, starting 0.5s ease-in-out 4s forwards;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0%
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+#imagestart {
+    background-image: url('Mindlift_logo-removebg-preview.png');
+    background-size: cover;
+    position: absolute;
+    left: 0.3em;
+    width: clamp(2rem, 8vw, 3rem);
+    height: clamp(2rem, 8vw, 3rem);
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+#flexstarttext {
+    font-size: clamp(0.25rem, 2.35vw, 1rem);
+    position: absolute;
+    left: 4em;
+    font-weight: 700;
+    transition: 0.5s;
+    color: aliceblue;
+}
+
+.tabbar {
+    font-size: clamp(0.25rem, 2.35vw, 1rem);
+    margin-right: 0.75em;
+    margin-top: clamp(0.25rem, 3vw, 1.5rem);
+    margin-bottom: clamp(0.25rem, 3vw, 1.5rem);
+    font-weight: 700;
+    text-decoration: none;
+    color: aliceblue;
+    transition: 0.5s;
+}
+
+.tabbar:hover {
+    scale: 1.1;
+    transition: 0.5s;
+    color: rgb(217, 220, 255);
+    background-color: rgba(108, 137, 233, 0.678);
+    padding-right: 1.25vw;
+    padding-left: 1.25vw;
+    padding-top: 0.05vh;
+    padding-bottom: 0.05vh;
+    border-radius: 22.5px;
+}
+
+.tabbar:active {
+    color: rgb(77, 57, 255);
+    transition: 0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main {
+    flex-direction: column;
+    text-align: center;
+}
+
+#image {
+    background-image: url('Mindlift_logo-removebg-preview.png');
+    background-size: 130%;
+    background-position: center;
+    width: clamp(20vw, 22vw, 25vw);
+    height: clamp(20vh, 22vh, 25vh);
+    opacity: 0;
+    animation: logoin 1.5s ease-out forwards, logomove 1s ease-in-out forwards;
+}
+
+@keyframes logoin {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logomove {
+    0% {
+        transform: scale(0.6);
+        filter: invert(0.3);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: invert(1);
+    }
+}
+
+#imagecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+#maincontext {
+    font-size: clamp(1rem, 15vw, 8rem);
+    font-weight: 800;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+
+    display: inline-block;
+
+    background: linear-gradient(90deg,
+            rgb(97, 79, 255),
+            rgb(126, 154, 247),
+            rgb(169, 213, 255),
+            rgb(126, 154, 247),
+            rgb(97, 79, 255));
+
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradientmove 15s linear infinite, starting 1s ease-in-out 1s forwards;
+}
+
+@keyframes gradientmove {
+    to {
+        background-position: 400%;
+    }
+}
+
+#description {
+    font-size: clamp(0.1px, 1.75vw, 25.5px);
+    font-weight: 600;
+    color: rgb(87, 146, 255);
+    text-shadow: 0px 0px 2px rgb(20, 0, 73);
+    animation: descriptionhue 4s linear infinite, starting 1.25s ease-in-out 2s forwards;
+}
+
+@keyframes descriptionhue {
+    50% {
+        filter: hue-rotate(45deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#decoration {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, rgb(21, 26, 97), rgb(21, 68, 139), rgb(107, 184, 255), rgb(21, 68, 139), rgb(21, 26, 97));
+    z-index: -1;
+    top: 0;
+    position: fixed;
+    opacity: 0.2;
+    animation: gradient 15s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(75deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    animation: starting 0.5s ease-in-out 4s forwards;
+}
+
+.bar {
+    font-size: clamp(0.05px, 2vw, 25.5px);
+    background: linear-gradient(90deg, rgba(35, 41, 126, 0.363), rgba(69, 43, 161, 0.281), rgba(71, 147, 218, 0.425), rgba(69, 43, 161, 0.281), rgba(35, 41, 126, 0.363));
+    border: 0.5px solid white;
+    color: aliceblue;
+    margin: 0.5em;
+    padding: clamp(0.05rem, 1.5vw, 1.5rem);
+    transition: 0.5s;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    animation: cmove ease-in-out 17.5s infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes cmove {
+    to {
+        background-position: 400%;
+    }
+}
+
+.bar:hover {
+    scale: 1.1;
+    transform: 0.5s;
+    background-color: rgba(0, 81, 255, 0.247);
+    animation: baranimate 0.5s ease-in-out 1 forwards;
+
+}
+
+@keyframes baranimate {
+    0% {}
+
+    25% {
+        rotate: -5deg;
+    }
+
+    50% {
+        transform: scale(1.05);
+        rotate: 5deg;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bar:active {
+    color: rgb(61, 123, 255);
+    transition: 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pixelate {
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+}
+
+#cloud-container{
+    width: 100vw;
+    display: flex;
+}
+
+#cloud-container::-webkit-scroller{
+    display: none;
+}
+
+#cloud-track{
+    display: flex;
+    width: 100vw;
+    animation: pathmove 8s linear infinite;
+}
+
+#cloud {
+    width: 100vw;
+    height: 10vh;
+    background-image: url("OGart.png");
+    align-content: center;
+    background-position: bottom;
+    background-size: auto 100%;
+    transform: scale(1.2);
+    opacity: 0;
+    animation: pathhue 4s ease-in-out infinite, pathin 1s ease-in-out 4s forwards ;
+}
+
+@keyframes pathin {
+    to {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+}
+
+
+@keyframes pathhue {
+    0% {}
+
+    50% {
+        filter: hue-rotate(45deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+@keyframes pathmove{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
